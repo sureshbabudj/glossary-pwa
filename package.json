@@ -1,0 +1,43 @@
+{
+  "name": "glossary-pwa",
+  "version": "1.0.0",
+  "description": "Find meaning of the english words",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run clean && parcel ./public/index.html --out-dir _dev",
+    "build": "parcel build ./public/index.html --out-dir dist --no-source-maps",
+    "clean": "rimraf ./_dev && rimraf ./.cache",
+    "prebuild": "rimraf ./dist && mkdir dist && npm run copy-img && npm run copy-icon",
+    "copy-img": "mkdir dist/icons && cp public/icons/* dist/icons",
+    "copy-icon": "mkdir dist/images && cp public/images/* dist/images"
+  },
+  "keywords": [
+    "parcel",
+    "pwa",
+    "react",
+    "glossary",
+    "service-worker"
+  ],
+  "author": "Suresh Babu",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "workbox-cacheable-response": "^6.1.5",
+    "workbox-expiration": "^6.1.5",
+    "workbox-routing": "^6.1.5",
+    "workbox-strategies": "^6.1.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.14.5",
+    "@types/react": "^17.0.14",
+    "@types/react-dom": "^17.0.9",
+    "parcel-bundler": "^1.12.5",
+    "rimraf": "^3.0.2",
+    "sass": "^1.35.2",
+    "typescript": "^4.3.5",
+    "workbox": "0.0.0"
+  }
+}
